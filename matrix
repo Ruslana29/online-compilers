@@ -1,0 +1,53 @@
+Руслана Бондар ДК-11, [03.02.2022 18:51]
+#include<stdio.h>
+#define MAX 100
+int main()
+{
+int arr1[MAX][MAX],mul[MAX][MAX],arr2[MAX][MAX],i,b,z,p,j,k,m,r1,t;
+ 
+scanf("%d",&t);// кол-во. тестов(тут у меня ошибка)
+scanf("%d",&r1);
+for(b = 0; b < t; b++)
+{
+for(i = 0; i < r1; i++)
+{
+for (j = 0; j < r1; j++)
+{
+scanf("%d",&arr1[i][j]);
+}
+}
+ 
+for(k = 0; k < r1; k++)
+{
+for(m = 0; m < r1; m++)
+{
+scanf("%d",&arr2[k][m]);
+}
+}
+//Умножение
+ 
+for(i = 0; i < r1; i++)
+{
+for(z = 0; z < (r1 * 2); z++)
+{
+mul[i][j] = 0;
+for(p = 0; p < (r1 * 2); p++)
+{
+mul[i][z] += arr1[i][p] * arr2[p][z];
+}
+}
+}
+}
+int e,d;
+ 
+for(e = 0; e < r1; e++)
+{
+for(d = 0; d < r1; d++)
+{
+printf("%d ",mul[e][d]);
+}
+printf("\n");
+}
+ 
+return 0;
+}
